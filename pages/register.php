@@ -374,10 +374,10 @@ if (isset($_POST['register'])) {
                     <form class="signup-form" method="POST" action="">
                         <a href="/index.php" class="brand-title">KosYuk</a>
                         <div class="signup-header">
-                            <h2 class="signup-title">Daftar</h2>
+                            <h2 class="signup-title">Register</h2>
                             <div class="login-prompt">
                                 <span>Sudah punya akun?</span>
-                                <a href="login.php" class="login">Masuk</a>
+                                <a href="login.php" class="login">Login</a>
                             </div>
                         </div>
 
@@ -428,7 +428,7 @@ if (isset($_POST['register'])) {
                         </div>
 
                         <!-- ======== SUBMIT DATA SIGN-UP ======== -->
-                        <input name="register" type="submit" value="Daftar" class="submit-button"/>
+                        <input name="register" type="submit" value="Register" class="submit-button"/>
                     </form>
                 </div>
             </div>

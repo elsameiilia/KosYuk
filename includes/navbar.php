@@ -36,7 +36,7 @@ $user = isset($_SESSION['user']) ? $_SESSION['user'] : null;
     <?php else: ?>
         <div class="auth-buttons">
             <a href="/pages/register.php" class="sign-btn">Register</a>
-            <a href="/pages/login.php" class="login-btn">Log In</a>
+            <a href="/pages/login.php" class="login-btn">Login</a>
         </div>
     <?php endif; ?>
 </header>

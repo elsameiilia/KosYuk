@@ -377,10 +377,10 @@ if (isset($_POST['login'])) {
                     <form class="login-form" method="POST" action="">
                         <a href="/index.php" class="brand-title">KosYuk</a>
                         <div class="login-header">
-                            <h2 class="login-title">Masuk</h2>
+                            <h2 class="login-title">Login</h2>
                             <div class="signup-prompt">
                                 <span>Belum punya akun?</span>
-                                <a href="register.php" class="login">Daftar</a>
+                                <a href="register.php" class="login">Register</a>
                             </div>
                         </div>
 
@@ -404,7 +404,7 @@ if (isset($_POST['login'])) {
                                 </svg>
                             </div>
                         </div>
-                        <button type="submit" name="login" class="submit-button">Masuk</button>
+                        <button type="submit" name="login" class="submit-button">Login</button>
                     </form>
                 </div>
             </div>

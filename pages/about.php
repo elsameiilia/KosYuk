@@ -3,6 +3,22 @@
 if (!session_id())
 session_start();
 include_once __DIR__ . "/../config/database.php";
+include_once __DIR__ . "/../model/Feedback.php";
+
+use model\Feedback;
+
+if (isset($_POST['submit'])) { 
+  $feedback = new Feedback(); 
+  $feedback->nama = $_POST['nama']; 
+  $feedback->email = $_POST['email']; 
+  $feedback->pesan = $_POST['pesan']; 
+  
+  try { $feedback->save($dbs); 
+    echo "<script>alert('Feedback submitted successfully!');</script>"; 
+  } catch (\Exception $e) { 
+    echo "<script>alert('Error: " . $e->getMessage() . "');</script>"; 
+  } 
+}
 
 ?>
 <!DOCTYPE html>
@@ -14,8 +30,8 @@ include_once __DIR__ . "/../config/database.php";
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
 
-  <body>
-    <div class="about-container">
+<body>
+  <div class="about-container">
    <!-- ======== HEADER ======== -->
 
    <?php include_once __DIR__. "/../includes/navbar.php"; ?>
@@ -69,6 +85,17 @@ include_once __DIR__ . "/../config/database.php";
                 </div>
               </div>
             </div>
+          </div>
+          <div class="feedback-form">
+              <form action="" method="POST">
+                  <label for="nama">Nama</label>
+                  <input type="text" class="nama" id="nama" name="nama">
+                  <label for="email">Email</label>
+                  <input type="text" class="email" id="email" name="email">
+                  <label for="pesan">Pesan</label>
+                  <input type="textarea" class="pesan" id="pesan" name="pesan">
+                  <input type="submit" name="submit" id="">
+              </form>
           </div>
         </div>
       </section>
@@ -132,6 +159,7 @@ include_once __DIR__ . "/../config/database.php";
           <hr class="faq-divider" />
         </div>
       </div>
+      <form action="" method="POST"></form>
       
       
     <!-- ========= JS untuk dropdown =========-->

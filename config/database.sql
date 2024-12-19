@@ -20,7 +20,8 @@ CREATE TABLE kosan(
     lokasi		VARCHAR(255)	NULL,
     fasilitas	TEXT			NULL,
     harga		DECIMAL(10, 2)	NULL,
-    banner      VARCHAR(255)    NOT NULL
+    banner      VARCHAR(255)    NOT NULL,
+    url_wa      VARCHAR(255)    NULL
 );
 
 CREATE TABLE img_kosan(
