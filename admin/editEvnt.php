@@ -42,12 +42,12 @@ if (!$kos['kos_id']) {
 }
 
 if (isset($_POST["update"])) {
-    $title = $_POST["title"]?? "";
-    $description = $_POST["description"]?? "";
-    $lokasi = $_POST["lokasi"]?? "";
-    $fasilitas = $_POST["fasilitas"]?? "";
-    $harga = $_POST["harga"]?? 0.0;
-    $url_wa = $_POST["url_wa"]?? "";
+    $title = $_POST["title"] ?? $kos["title"];
+    $description = $_POST["description"] ?? $kos["description"]; 
+    $lokasi = $_POST["lokasi"] ?? $kos["lokasi"];
+    $fasilitas = $_POST["fasilitas"] ?? $kos["fasilitas"]; 
+    $harga = $_POST["harga"] ?? $kos["harga"]; 
+    $url_wa = $_POST["url_wa"] ?? $kos["url_wa"];
 
     try {
         $query = "UPDATE kosan SET title = ?,  description = ?, lokasi = ?, fasilitas = ?, harga = ?, url_wa = ? WHERE kos_id = ?";
