@@ -114,7 +114,7 @@ if (isset($_POST["create"])) {
                         <input type="text" name="title" id="title" class="form-input" required>
                         <label for="fasilitas" class="form-label">Fasilitas</label>
                         <input type="text" name="fasilitas" id="fasilitas" class="form-input" required>
-                        <label for="location" class="form-label">Lokasi</label>
+                        <label for="lokasi" class="form-label">Lokasi</label>
                         <input type="text" name="lokasi" id="lokasi" class="form-input" required>
                         <div class="datetime-container">
                             <div class="date-input">
@@ -140,7 +140,7 @@ if (isset($_POST["create"])) {
                         </div>
                         <input type="file" name="banner" id="thumbnail-upload" class="visually-hidden" accept="image/*" required onchange="updateThumbnailPreview(event)"/>
                     </div> 
-                <label for="photos" class="form-label">Banner:</label>
+                <label for="photos" class="form-label">Galeri:</label>
                 <div class="upload-container" role="button" tabindex="0"
                          onclick="document.getElementById('gallery-upload').click()">
                         <div id="thumbnail-preview"><img src="/images/assets/upload.png" alt="" class="upload-icon"/>
