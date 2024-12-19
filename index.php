@@ -56,7 +56,7 @@ $stmt->close();
                 <h2 class="events-heading">WHAT'S ON</h2>
                 <p class="events-description">Dive into rich history, stunning landscapes, and cultural experiences that
                     will leave you inspired.</p>
-                <a href="events.php" class="cta-button-discover"><b>Discover more events</b></a>
+                <a href="/pages/events.php" class="cta-button-discover"><b>Discover more events</b></a>
             </div>
 
             <div class="events-gallery">
