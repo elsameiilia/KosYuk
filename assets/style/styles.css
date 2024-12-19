@@ -1083,6 +1083,9 @@
 
 .jumbotron {
   padding: 2rem 6rem;
+  background-color: #ffffff;
+  border-top-left-radius: 24px;
+  border-top-right-radius: 24px;
 }
 
 .search-container {

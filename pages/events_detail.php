@@ -5,7 +5,7 @@ include_once __DIR__ . "/../config/database.php";
 try{
 $username = $_SESSION['user']['username'] ?? '';
 
-// Check if event_id or id is set
+// Check if kos_id or id is set
 $kos_id = isset($_GET['kos_id']) ? $_GET['kos_id'] : (isset($_GET['id']) ? $_GET['id'] : null);
 
 if ($kos_id === null) {
@@ -13,7 +13,7 @@ if ($kos_id === null) {
     exit();
 }
 
-// Fetch event details
+// Fetch kos details
 $query = "SELECT title, description, lokasi, fasilitas, harga, banner, url_wa FROM kosan WHERE kos_id = ?";
 $stmt = mysqli_prepare($dbs, $query);
 if (!$stmt) {

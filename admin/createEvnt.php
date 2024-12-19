@@ -86,7 +86,173 @@ if (isset($_POST["create"])) {
     <?php include_once __DIR__ . "/../includes/meta.php"; ?>
     <title>Buat Postingan</title>
     <link rel="stylesheet" type="text/css" href="/../../assets/style/styles.css"/>
+    <style>
+        .form-container {
+            margin-top: 31px;
+            width: 655px;
+            max-width: 100%;
+        }
 
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            margin-top: 6px;
+            margin-bottom: 30px;
+        }
+
+        .form-label {
+            font-family: 'Sora', sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            margin-top: 50px;
+        }
+
+        .form-input {
+            border-radius: 5px;
+            background-color: rgba(249, 250, 251, 1);
+            color: rgba(0, 0, 0, 0.5);
+            letter-spacing: 0.3px;
+            padding: 9px 18px;
+            font: 400 12px/2 'Poppins', sans-serif;
+            border: 1px solid rgba(115, 76, 16, 1);
+            width: 100%;
+            height: 30px;
+        }
+
+        .datetime-container {
+            display: flex;
+            gap: 30px;
+            margin-top: 23px;
+        }
+
+        .date-input,
+        .time-input {
+            flex: 1;
+        }
+
+        .form-textarea {
+            border-radius: 5px;
+            background-color: rgba(249, 250, 251, 1);
+            color: rgba(0, 0, 0, 0.5);
+            letter-spacing: 0.3px;
+            padding: 9px 17px;
+            min-height: 100px;
+            font: 400 12px/2 Poppins, sans-serif;
+            border: 1px solid rgba(115, 76, 16, 1);
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+
+        .upload-container {
+            border-radius: 5px;
+            background-color: rgba(249, 250, 251, 1);
+            display: flex;
+            margin-top: 11px;
+            flex-direction: column;
+            align-items: center;
+            color: rgba(115, 76, 16, 1);
+            letter-spacing: 0.3px;
+            justify-content: center;
+            padding: 26px 80px;
+            font: 400 12px/2 Poppins, sans-serif;
+            border: 1px dashed rgba(115, 76, 16, 1);
+        }
+
+        #thumbnail-preview,
+        #gallery-preview {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+
+        .file-preview {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            color: #000;
+        }
+
+        .preview-icon {
+            width: 20px;
+            height: 20px;
+        }
+
+        .visually-hidden {
+            display: none;
+        }
+
+        .upload-icon {
+            width: 32px;
+            height: 32px;
+        }
+
+
+        .submit-button {
+            border-radius: 5px;
+            background-color: rgba(115, 76, 16, 1);
+            align-self: end;
+            display: flex;
+            margin-top: 40px;
+            min-height: 42px;
+            align-items: center;
+            gap: 5px;
+            color: var(--white, #fff);
+            text-align: center;
+            justify-content: center;
+            padding: 11px 20px;
+            font: 13px 'Poppins', sans-serif;
+            border: none;
+            cursor: pointer;
+            border-style: none;
+        }
+
+        .submit-icon {
+            aspect-ratio: 1;
+            object-fit: contain;
+            width: 14px;
+        }
+
+        .visually-hidden {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            border: 0;
+        }
+
+        @media (max-width: 991px) {
+            .dashboard-container {
+                padding: 0 20px;
+            }
+
+            .sidebar-container {
+                margin-top: 40px;
+            }
+
+            .main-content {
+                padding: 0 20px 100px;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .datetime-container {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+        }
+    </style>
 </head>
 
 <body>
@@ -143,10 +309,10 @@ if (isset($_POST["create"])) {
                 <label for="photos" class="form-label">Galeri:</label>
                 <div class="upload-container" role="button" tabindex="0"
                          onclick="document.getElementById('gallery-upload').click()">
-                        <div id="thumbnail-preview"><img src="/images/assets/upload.png" alt="" class="upload-icon"/>
+                        <div id="gallery-preview"><img src="/images/assets/upload.png" alt="" class="upload-icon"/>
                             <span>Click to upload photo</span>
                         </div>
-                        <input type="file" name="photos[]" id="gallery-upload" class="visually-hidden" accept="image/*" multiple required onchange="updateThumbnailPreview(event)"/>
+                        <input type="file" name="photos[]" id="gallery-upload" class="visually-hidden" accept="image/*" multiple required onchange="updateGalleryPreview(event)"/>
                     </div> 
                 <button type="submit" name="create" class="submit-button"><img src="/images/assets/add-post.png" alt="" class="submit-icon"/> Add Post</button>
             </form>
@@ -160,26 +326,49 @@ if (isset($_POST["create"])) {
                             // Clear previous content
                             previewContainer.innerHTML = '';
 
-                            if (files) {
-                                for (let i = 0; i < files.length; i++) {
-                                    const file = files[i];
+                            // Create a preview icon
+                            const icon = document.createElement('img');
+                            icon.src = '../assets/attach-icon.png'; // Replace with the attach icon URL
+                            icon.alt = 'Attach Icon';
+                            icon.className = 'preview-icon';
 
-                                    // Create a preview icon
-                                    const icon = document.createElement('img');
-                                    icon.src = '../assets/attach-icon.png'; // Replace with the attach icon URL
-                                    icon.alt = 'Attach Icon';
-                                    icon.className = 'preview-icon';
+                            // Add file name
+                            const fileName = document.createElement('span');
+                            fileName.textContent = file.name;
 
-                                    // Add file name
-                                    const fileName = document.createElement('span');
-                                    fileName.textContent = file.name;
-
-                                    // Add to container
-                                    previewContainer.appendChild(icon);
-                                    previewContainer.appendChild(fileName);
-                                }
-                            }
+                            // Add to container
+                            previewContainer.appendChild(icon);
+                            previewContainer.appendChild(fileName);
                         }
+                        
+                        function updateGalleryPreview(event) { 
+                            const previewContainer = document.getElementById('gallery-preview'); 
+                            const files = event.target.files;
+
+                            // Clear previous content 
+                            previewContainer.innerHTML = ''; 
+                            if (files) { 
+                                for (let i = 0; i < files.length; i++) { 
+                                    const file = files[i]; 
+
+                                // Create a preview icon 
+                                const icon = document.createElement('img'); 
+                                icon.src = '../assets/attach-icon.png';
+
+                                // Replace with the attach icon URL 
+                                icon.alt = 'Attach Icon'; 
+                                icon.className = 'preview-icon'; 
+
+                                // Add file name 
+                                const fileName = document.createElement('span'); 
+                                fileName.textContent = file.name; 
+
+                                // Add to container 
+                                previewContainer.appendChild(icon); 
+                                previewContainer.appendChild(fileName); 
+                                } 
+                            } 
+                        } 
                     </script>
 
 

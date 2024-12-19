@@ -97,7 +97,7 @@ mysqli_stmt_close($stmt);
         <h1 class="hero-title-eventlist">Cari Kos</h1>
     </section>
 
-    <div class="jumbotron">
+    <section class="jumbotron">
         <!-- ======== SEARCH BAR ======== -->
         <div class="search-container">
             <form method="GET" action="" id="search-form">
@@ -132,7 +132,7 @@ mysqli_stmt_close($stmt);
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
     <!-- Pagination links -->
     <div class="pagination">

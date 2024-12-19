@@ -41,7 +41,7 @@ CREATE TABLE bookmark(
 );
 
 CREATE TABLE feedback(
-    fb_id   INT          NOT NULL PRIMARY KEY,
+    fb_id   INT          NOT NULL PRIMARY KEY AUTO_INCREMENT,
 	nama	VARCHAR(100) NOT NULL,
     email	VARCHAR(100) NULL,
     pesan	TEXT		 NULL
