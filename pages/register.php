@@ -50,7 +50,7 @@ if (isset($_POST['register'])) {
 
             echo "<script>
                 alert('Pendaftaran Berhasil');
-                location.replace('/login.php');
+                location.replace('login.php');
                 </script>";
             exit();
         }
