@@ -149,7 +149,6 @@ mysqli_stmt_close($stmt_check);
                 </div>
     </div>
     <article>
-        <h2 class="eventeach-title"><?= htmlspecialchars($kos['title']); ?></h2>
         <p class="eventeach-description">
             <?= nl2br(htmlspecialchars($kos['description'])); ?>
         </p>

@@ -8,6 +8,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  
 }
 
 /* ==========================================================
@@ -235,52 +236,41 @@
 
 /* ==========================================================*/
 
-.hero-section {
-  border-radius: 0 0 24px 24px;
+/* HOMEPAGE */
+
+.hero {
+  height: 100vh;
+  background-image: linear-gradient(rgb(2, 59, 247), rgba(0, 0, 0, 0)), url('../images/herocek.jpeg');
+  background-size: cover;
+  background-position: center;
   position: relative;
-  color: #f5f5f5;
-  font: 600 20px Montserrat, sans-serif;
 }
-
-.hero-img {
-  aspect-ratio: 2.06;
-  object-fit: cover;
-  width: 100%;
-  border-radius: 0 0 24px 24px;
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.30);
-  filter: brightness(0.7);
-}
-
 
 .hero-content {
   position: absolute;
-  z-index: 1;
-  left: 70px;
-  bottom: 215px;
-  width: 1106px;
-  max-width: 100%;
+  top: 40%;
+  left: 5%;
+  transform: translateY(-50%);
+  color: white;
+  max-width: 800px;
 }
 
-
-/*====== DISCOVER EGYPT ======*/
-.hero-subtitle {
-  font-weight: 500;
-  font-size: 20px;
+.hero-content h1 {
+  font-size: 5rem;
+  font-weight: bold;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
 }
 
-/*====== experience unforgatable ======*/
-.hero-title {
-  font-size: 48px;
-  margin: 37px 0;
+.hero-content h2 {
+  margin-bottom: 1rem;
 }
 
-
-/*====== BUTTON explore more ======*/
-.cta-button-explore {
+.jelajahi-btn {
   font-family: sans-serif;
   display: inline-block;
   border-radius: 24px;
-  background: #bd874f;
+  background: #0000a5;
   padding-left: 20px;
   padding-right: 20px;
   padding-top: 13px;
@@ -290,19 +280,87 @@
   font-size: 16px;
 }
 
-.cta-button-explore:hover {
+.jelajahi-btn:hover {
   background: rgba(0, 0, 0, 0.5);
   color: white;
   border: 1px solid white;
   transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease;
 }
 
+@media (max-width: 768px) {
+  .hero-content h1 {
+      font-size: 3rem;
+  }
+}
 
-.main-content {
+/* ABOUT */
+.about {
+  background: rgb(255, 251, 239);
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+  border-radius: 40px;
+  margin: -40px 0 0 0;
+  padding: 5rem 5%;
+  position: relative;
+  z-index: 2;
+}
+
+.about-img {
+  flex: 0 0 auto;
+  width: 400px;
+  height: 533.33px;
+  overflow: hidden;
+  margin: 50px;
+}
+
+.about-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+.about-content {
+  flex: 1;
+  padding: 2rem 0;
+}
+
+.about-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: #000000;
+}
+
+.about-content p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #000000;
+  padding-bottom: 30px;
+}
+
+
+/* ====== DISCOVER EGYPT ======*/
+/* .hero-subtitle {
+  font-weight: 500;
+  font-size: 20px;
+} */
+
+/*====== experience unforgatable ======*/
+/* .hero-title {
+  font-size: 48px;
+  margin: 37px 0;
+} */
+
+
+/*====== BUTTON explore more ====== */
+
+
+/* .main-content {
   margin: 124px auto 0;
   width: 100%;
   max-width: 1300px;
-}
+} */
 
 
 
@@ -353,19 +411,25 @@
 
 /*====== EVENT ======*/
 .events-section {
+  border-radius: 40px;
   display: flex;
   gap: 40px 59px;
   flex-wrap: wrap;
-  margin-bottom: 140px;
-  margin-left: 50px;
-  margin-right: 50px;
+  background: #b4c8ff;
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+  padding: 5rem 5%;
+  margin-bottom: 50px;
+  position: relative;
+  z-index: 2;
 }
 
 .cta-button-discover {
   font-family: sans-serif;
   display: inline-block;
   border-radius: 24px;
-  background: #bd874f;
+  background: #0000a5;
   padding-left: 20px;
   padding-right: 20px;
   padding-top: 13px;
@@ -377,8 +441,8 @@
 
 .cta-button-discover:hover {
   background: #fff8f0;
-  color: #bd874f;
-  border: 1px solid #bd874f;
+  color: #0000a5;
+  border: 1px solid #0000a5;
   transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease;
 }
 
@@ -386,6 +450,7 @@
   flex: 1;
   min-width: 240px;
   padding: 5px 10px;
+  margin: 100p;
 }
 
 .events-heading {
@@ -432,7 +497,7 @@
 .event-details-home {
   position: absolute;
   border-radius: 0 0 24px 24px;
-  background: var(--Foundation-Yellow-Normal, #c69552);
+  background: var(--Foundation-Yellow-Normal, #2b00e8);
   z-index: 10;
   display: flex;
   margin-bottom: 0;
@@ -1802,7 +1867,7 @@
    ==========================================================*/
 .container-dashboard {
   display: flex;
-  flex-direction: columnf;
+  flex-direction: column;
   height: 100vh;
 }
 

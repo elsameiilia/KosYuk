@@ -2,6 +2,7 @@
 // php -S localhost:3000
 if (!session_id()) session_start();
 include_once __DIR__ . "/config/database.php";
+include_once __DIR__ . "/middleware/middleware.php";
 
 
 // Query untuk events
@@ -29,7 +30,7 @@ $stmt->close();
 
 <head>
     <?php include_once __DIR__ . "/includes/meta.php"; ?>
-    <link rel="stylesheet" type="text/css" href="/../../assets/style/styles.css"/>
+    <link rel="stylesheet" type="text/css" href="assets/style/styles.css"/>
     <title>KosYuk!</title>
 </head>
 
@@ -37,34 +38,40 @@ $stmt->close();
 <div class="landing-container">
     <?php include_once __DIR__ . "/includes/navbar.php"; ?>
 
-    <!-- ======== BERANDA ======== -->
-    <section class="hero-section">
-        <img src="/images/assets/landing-page.png" alt="Egyptian landscape panorama" class="hero-img"/>
+    <section class="hero">
         <div class="hero-content">
-            <p class="hero-subtitle">DISCOVER EGYPT</p>
-            <h2 class="hero-title">Experience Unforgettable Landscape, Relive History!</h2>
-            <a href="#main-content" class="cta-button-explore">Explore more</a>
+            <h2>Kos Yuk!<br></h2>
+            <h1>Temukan Kos<br>Impianmu</h1>
+            <a href="#main-content"><button class="jelajahi-btn">Cari Sekarang!</button></a>
         </div>
     </section>
 
+    <section class="about curved-top">
+        <div class="about-img">
+            <img src="assets/images/abouthomepage.jpeg" alt="Purwokerto">
+        </div>
+        <div class="about-content">
+            <h2>Apa itu si Kos Yuk!</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed magnam rerum nisi, autem rem in officiis illum veritatis accusantium voluptates laborum, mollitia cum harum totam. Ratione adipisci enim aut temporibus.</p>
+            <a href="pages/about.php"><button class="jelajahi-btn">Selengkapnya</button></a>
+        </div>
+    </section>
 
     <main class="main-content" id="main-content">
-
         <!-- ========= EVENT ========= -->
         <section class="events-section">
             <div class="events-content">
-                <h2 class="events-heading">WHAT'S ON</h2>
-                <p class="events-description">Dive into rich history, stunning landscapes, and cultural experiences that
-                    will leave you inspired.</p>
-                <a href="/pages/events.php" class="cta-button-discover"><b>Discover more events</b></a>
+                <h2 class="events-heading">REKOMENDASI</h2>
+                <p class="events-description">Beberapa kosan yang mungkin anda suka!</p>
+                <a href="pages/events.php" class="cta-button-discover"><b>Lebih Banyak</b></a>
             </div>
 
             <div class="events-gallery">
                 <?php foreach ($kosan as $kos): ?>
                     <article class="event-card-home" tabindex="0">
-                        <img loading="lazy" src="/../uploads/photos/<?= $kos['banner']; ?>"
+                        <img loading="lazy" src="/uploads/photos/<?= $kos['banner']; ?>"
                              alt="image of <?= $kos['title']; ?>" class="event-image-home">
-                        <a href="/pages/events_detail.php?id=<?= $kos['kos_id'] ?>" class="event-details-home">
+                        <a href="/pages/events_detail.php?id=<?= $kos['kos_id'] ?>" class="event-details-home" onclick="return checkLogin(event);"> 
                             <div class="event-info-home">
                                 <h2 class="event-title-home"><br><?= $kos['title']; ?></h2>
                                 <h2 class="event-date-home"><br><?= $kos['harga']; ?></h2>
@@ -75,25 +82,21 @@ $stmt->close();
 
             </div>
         </section>
-        <!-- ========== GALLERY ========== 
-        <section class="gallery-section">
-            <h2 class="gallery-heading">GALLERY</h2>
-            <p class="gallery-subtitle">A glimpse of heaven on earth were found in Egypt.</p>
-            <div class="gallery-grid">
-                <img src="/images/assets/gallery1.png" alt="Egyptian landscape" class="gallery-main gallery-img"/>
-                <div class="gallery-side">
-                    <img src="/images/assets/gallery2.png" alt="Historical site" class="gallery-img"/>
-                    <div class="gallery-row">
-                        <img src="/images/assets/gallery3.png" alt="Cultural scene" class="gallery-img"/>
-                        <img src="/images/assets/gallery4.png" alt="Traditional architecture" class="gallery-img"/>
-                    </div>
-                </div>
-            </div>
-        </section>-->
     </main>
 
     <?php include_once __DIR__ . "/includes/footer.php"; ?>
 </div>
+
+<script> 
+    function checkLogin(event) { 
+        <?php if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true): ?> 
+        event.preventDefault(); // Mencegah link diakses 
+        alert('Anda harus login untuk mengakses detail event.'); 
+        window.location.href = 'pages/login.php'; 
+        return false; 
+        <?php endif; ?> 
+        return true; } 
+        </script>
 </body>
 
 </html>
