@@ -156,10 +156,11 @@ if (isset($_POST["Save"])) {
         padding: 85px 140px;
         margin-top: 20px;
         margin-bottom: 20px;
+        background-color: #fff;
         }
         
         .profile-section {
-        background: #bd874f;
+        background:rgb(107, 143, 252);
         border-radius: 20px;
         color: #fff;
         padding: 60px 55px;
@@ -219,7 +220,7 @@ if (isset($_POST["Save"])) {
         }
         
         .btn-primary-profile {
-        background: #734c10;
+        background: #0000a5;
         border: none;
         border-radius: 24px;
         color: #f8f3ed;
@@ -229,7 +230,7 @@ if (isset($_POST["Save"])) {
         }
 
         .btn-primary-profile:hover {
-        background: #bd874f; 
+        background:rgb(0, 0, 255); 
         border: 2px solid #f8f3ed; 
         color: #f8f3ed; 
         }
@@ -392,7 +393,7 @@ if (isset($_POST["Save"])) {
         <main class="main-content-profile">
             <section class="profile-section" aria-labelledby="profile-title">
                 <h1 id="profile-title" class="profilesection-title">My Profile</h1>
-                <p class="profilesection-subtitle">Manage your account profile</p>
+                <p class="profilesection-subtitle">Kelola profil akun anda</p>
 
                 <div class="profile-grid">
                     <form class="profile-form" aria-label="Profile information form" method="POST"
@@ -436,7 +437,7 @@ if (isset($_POST["Save"])) {
                 <!-- ======== BOOKMARKS ======== -->
                 <section class="bookmarks-section" aria-labelledby="bookmarks-title">
                     <h2 id="bookmarks-title" class="profilesection-title">Bookmarks</h2>
-                    <p class="profilesection-subtitle">Mark your journey through Egypt's treasures!</p>
+                    <p class="profilesection-subtitle">Tandai postingan yang menurut anda menarik!</p>
 
                     <div class="bookmarks-list">
                         <?php foreach ($bookmarks as $bookmark): ?>

@@ -206,7 +206,7 @@ if (isset($_POST['delete'])) {
             <header class="dashboard-header">
                 <h1 class="page-title-dashboard">Kelola Postingan</h1>
                 <div class="user-profile-dashboard"><img class="profile-icon-dashboard"
-                                                         src="../images/assets/profile-admin.png" alt="User profile"/>
+                                                         src="/../../assets/images/profile-admin.png" alt="User profile"/>
                     <div class="profile-text-dashboard">Admin</div>
                 </div>
             </header> <!-- ===== Konten ======= -->

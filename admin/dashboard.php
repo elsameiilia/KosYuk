@@ -45,6 +45,7 @@ mysqli_stmt_close($stmt_postings);
             font-family: Poppins, sans-serif;
             justify-content: start;
             flex-wrap: wrap;
+            margin: 20px;
         }
 
         .stats-card {
@@ -119,15 +120,12 @@ mysqli_stmt_close($stmt_postings);
     <!-- ======= MAIN DASHBOARD ========  -->
     <div class="main-dashboard">
         <div class="dashboard">
-            <!-- ======= MAIN DASHBOARD ========  -->
-            <div class="main-dashboard">
-                <div class="dashboard">
 
                     <!-- ===== Header =======  -->
                     <header class="dashboard-header">
                         <h1 class="page-title-dashboard">Dashboard</h1>
                         <div class="user-profile-dashboard">
-                            <img class="profile-icon-dashboard" src="../images/assets/profile-admin.png"
+                            <img class="profile-icon-dashboard" src="/../../assets/images/profile-admin.png"
                                  alt="User profile"/>
                             <div class="profile-text-dashboard">Admin</div>
                         </div>
@@ -138,7 +136,7 @@ mysqli_stmt_close($stmt_postings);
                             <div class="stats-card">
                                 <div class="card-content">
                                     <div class="stats-wrapper"><img class="stats-icon"
-                                                                    src="../images/assets/stats-icon1.png"
+                                                                    src="/../../assets/images/stats-icon1.png"
                                                                     alt="Users icon"/>
                                         <div class="stats-info">
                                             <div class="stats-number"><?= htmlspecialchars($total_users); ?></div>
@@ -150,7 +148,7 @@ mysqli_stmt_close($stmt_postings);
                             <a href="manageEvnt.php" class="stats-card">
                                 <div class="card-content">
                                     <div class="stats-wrapper"><img class="stats-icon"
-                                                                    src="../images/assets/stats-icon2.png"
+                                                                    src="/../../assets/images/stats-icon2.png"
                                                                     alt="Posts icon"/>
                                         <div class="stats-info">
                                             <div class="stats-number"><?= htmlspecialchars($total_postings); ?>

@@ -40,19 +40,19 @@ $stmt->close();
 
     <section class="hero">
         <div class="hero-content">
-            <h2>Kos Yuk!<br></h2>
+            <h2>KosYuk<br></h2>
             <h1>Temukan Kos<br>Impianmu</h1>
             <a href="#main-content"><button class="jelajahi-btn">Cari Sekarang!</button></a>
         </div>
     </section>
 
-    <section class="about curved-top">
+    <section class="about">
         <div class="about-img">
-            <img src="assets/images/abouthomepage.jpeg" alt="Purwokerto">
+            <img src="assets/images/unsoed.png" alt="Purwokerto">
         </div>
         <div class="about-content">
-            <h2>Apa itu si Kos Yuk!</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed magnam rerum nisi, autem rem in officiis illum veritatis accusantium voluptates laborum, mollitia cum harum totam. Ratione adipisci enim aut temporibus.</p>
+            <h2>Apa itu KosYuk?</h2>
+            <p>KosYuk adalah sebuah sistem berbasis web yang dikembangkan untuk membantu mahasiswa, pekerja, atau masyarakat umum dalam menemukan kos-kosan di sekitar Universitas Jenderal Soedirman (UNSOED).</p>
             <a href="pages/about.php"><button class="jelajahi-btn">Selengkapnya</button></a>
         </div>
     </section>
@@ -73,8 +73,8 @@ $stmt->close();
                              alt="image of <?= $kos['title']; ?>" class="event-image-home">
                         <a href="/pages/events_detail.php?id=<?= $kos['kos_id'] ?>" class="event-details-home" onclick="return checkLogin(event);"> 
                             <div class="event-info-home">
-                                <h2 class="event-title-home"><br><?= $kos['title']; ?></h2>
-                                <h2 class="event-date-home"><br><?= $kos['harga']; ?></h2>
+                                <h2 class="event-title-home"><?= $kos['title']; ?></h2>
+                                <h2 class="event-date-home">Rp.<?= $kos['harga']; ?> /bulan</h2>
                             </div>
                         </a>
                     </article>

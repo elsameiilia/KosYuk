@@ -55,7 +55,7 @@ if (isset($_POST["update"])) {
         if (!$stmt) {
             throw new Exception("Prepare failed: " . mysqli_error($dbs));
         }
-        mysqli_stmt_bind_param($stmt, "ssssdis", $title, $description, $lokasi, $fasilitas, $harga, $url_wa, $kos_id);
+        mysqli_stmt_bind_param($stmt, "sssssis", $title, $description, $lokasi, $fasilitas, $harga, $url_wa, $kos_id);
         mysqli_stmt_execute($stmt);
         mysqli_stmt_close($stmt);
 
@@ -266,9 +266,9 @@ if (isset($_POST["update"])) {
     <div class="dashboard">
         <!-- ===== Header ======= -->
         <header class="dashboard-header">
-            <h1 class="page-title-dashboard">Edit Event</h1>
+            <h1 class="page-title-dashboard">Edit Postingan</h1>
             <div class="user-profile-dashboard">
-                <img class="profile-icon-dashboard" src="../assets/profile-admin.png" alt="User profile"/>
+                <img class="profile-icon-dashboard" src="/../../assets/images/profile-admin.png" alt="User profile"/>
                 <div class="profile-text-dashboard">Admin</div>
             </div>
         </header>
@@ -285,7 +285,7 @@ if (isset($_POST["update"])) {
                         <input type="text" name="fasilitas" id="fasilitas" class="form-input"
                                value="<?= htmlspecialchars($kos["fasilitas"]) ?>" required>
                         <label for="location" class="form-label">Lokasi</label>
-                        <input type="text" name="location" id="location" class="form-input"
+                        <input type="text" name="lokasi" id="lokasi" class="form-input"
                                value="<?= htmlspecialchars($kos["lokasi"]) ?>" required>
                         <div class="datetime-container">
                             <div class="date-input">
@@ -295,7 +295,7 @@ if (isset($_POST["update"])) {
                             </div>
                             <div class="time-input">
                                 <label for="time" class="form-label">Harga</label>
-                                <input type="number" name="harga" id="harga" class="form-input"
+                                <input type="text" name="harga" id="harga" class="form-input"
                                        value="<?= htmlspecialchars($kos["harga"]) ?>" required>
                             </div>
                         </div>

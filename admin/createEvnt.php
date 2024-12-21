@@ -37,7 +37,7 @@ if (isset($_POST["create"])) {
         if (!$stmt) {
             throw new Exception("Prepare failed: " . mysqli_error($dbs));
         }
-        mysqli_stmt_bind_param($stmt, "ssssdss",  $title, $description, $lokasi, $fasilitas, $harga, $url_wa, $banner);
+        mysqli_stmt_bind_param($stmt, "sssssss",  $title, $description, $lokasi, $fasilitas, $harga, $url_wa, $banner);
         mysqli_stmt_execute($stmt);
 
         // Get the last inserted kos_id
@@ -98,7 +98,7 @@ if (isset($_POST["create"])) {
             grid-template-columns: 1fr 1fr;
             gap: 50px;
             margin-top: 6px;
-            margin-bottom: 30px;
+            margin-bottom: 10px;
         }
 
         .form-label {
@@ -118,12 +118,13 @@ if (isset($_POST["create"])) {
             border: 1px solid rgba(115, 76, 16, 1);
             width: 100%;
             height: 30px;
+            margin-bottom: 5px;
         }
 
         .datetime-container {
             display: flex;
             gap: 30px;
-            margin-top: 23px;
+            margin-top: 10px;
         }
 
         .date-input,
@@ -137,11 +138,11 @@ if (isset($_POST["create"])) {
             color: rgba(0, 0, 0, 0.5);
             letter-spacing: 0.3px;
             padding: 9px 17px;
-            min-height: 100px;
+            max-height: 100px;
             font: 400 12px/2 Poppins, sans-serif;
             border: 1px solid rgba(115, 76, 16, 1);
             width: 100%;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
         }
 
 
@@ -149,15 +150,16 @@ if (isset($_POST["create"])) {
             border-radius: 5px;
             background-color: rgba(249, 250, 251, 1);
             display: flex;
-            margin-top: 11px;
+            margin-top: 0px;
             flex-direction: column;
             align-items: center;
             color: rgba(115, 76, 16, 1);
             letter-spacing: 0.3px;
             justify-content: center;
-            padding: 26px 80px;
+            padding: 16px 60px;
             font: 400 12px/2 Poppins, sans-serif;
             border: 1px dashed rgba(115, 76, 16, 1);
+            margin-bottom: 10px;
         }
 
         #thumbnail-preview,
@@ -198,7 +200,7 @@ if (isset($_POST["create"])) {
             background-color: rgba(115, 76, 16, 1);
             align-self: end;
             display: flex;
-            margin-top: 40px;
+            margin-top: 20px;
             min-height: 42px;
             align-items: center;
             gap: 5px;
@@ -257,16 +259,18 @@ if (isset($_POST["create"])) {
 
 <body>
 
+<div class="container-dashboard">
+    <?php include_once __DIR__ . "/../includes/navbarAdm.php"; ?>
+</div>
+
 <!-- ======= MAIN DASHBOARD ========  -->
 <div class="main-dashboard">
     <div class="dashboard">
-        <?php include_once __DIR__ . "/../includes/navbarAdm.php"; ?>
-
         <!-- ===== Header =======  -->
         <header class="dashboard-header">
             <h1 class="page-title-dashboard">Buat Postingan</h1>
             <div class="user-profile-dashboard">
-                <img class="profile-icon-dashboard" src="../assets/profile-admin.png" alt="User profile"/>
+                <img class="profile-icon-dashboard" src="/../../assets/images/profile-admin.png" alt="User profile"/>
                 <div class="profile-text-dashboard">Admin</div>
             </div>
         </header>
@@ -289,7 +293,7 @@ if (isset($_POST["create"])) {
                             </div>
                             <div class="time-input">
                                 <label for="time" class="form-label">Harga</label>
-                                <input type="number" name="harga" id="harga" class="form-input" required>
+                                <input type="text" name="harga" id="harga" class="form-input" required>
                             </div>
                         </div>
                     </div>
@@ -301,7 +305,7 @@ if (isset($_POST["create"])) {
                 <label for="banner" class="form-label">Banner:</label>
                 <div class="upload-container" role="button" tabindex="0"
                          onclick="document.getElementById('thumbnail-upload').click()">
-                        <div id="thumbnail-preview"><img src="/images/assets/upload.png" alt="" class="upload-icon"/>
+                        <div id="thumbnail-preview"><img src="/../../assets/images/upload.png" alt="" class="upload-icon"/>
                             <span>Click to upload photo</span>
                         </div>
                         <input type="file" name="banner" id="thumbnail-upload" class="visually-hidden" accept="image/*" required onchange="updateThumbnailPreview(event)"/>
@@ -309,12 +313,12 @@ if (isset($_POST["create"])) {
                 <label for="photos" class="form-label">Galeri:</label>
                 <div class="upload-container" role="button" tabindex="0"
                          onclick="document.getElementById('gallery-upload').click()">
-                        <div id="gallery-preview"><img src="/images/assets/upload.png" alt="" class="upload-icon"/>
+                        <div id="gallery-preview"><img src="/../../assets/images/upload.png" alt="" class="upload-icon"/>
                             <span>Click to upload photo</span>
                         </div>
                         <input type="file" name="photos[]" id="gallery-upload" class="visually-hidden" accept="image/*" multiple required onchange="updateGalleryPreview(event)"/>
                     </div> 
-                <button type="submit" name="create" class="submit-button"><img src="/images/assets/add-post.png" alt="" class="submit-icon"/> Add Post</button>
+                <button type="submit" name="create" class="submit-button"><img src="/../../assets/images/add-post.png" alt="" class="submit-icon"/> Add Post</button>
             </form>
         </div>
 

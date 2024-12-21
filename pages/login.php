@@ -102,7 +102,7 @@ if (isset($_POST['login'])) {
         .content-container {
             position: relative;
             border-radius: 20px;
-            background: var(--foundation-yellow-light-active, #ebdac8);
+            background:  #c0d1ff;
             padding: 59px 64px;
         }
 
@@ -151,7 +151,7 @@ if (isset($_POST['login'])) {
             font: 400 48px Underdog, sans-serif;
             flex-grow: 1;
             font-family: 'Underdog', sans-serif;
-            background: linear-gradient(#ff9900, #734c10);
+            background: linear-gradient(#c0d1ff, #0000a5);
             -webkit-background-clip: text;
             color: transparent;
             text-decoration: none;
@@ -211,21 +211,21 @@ if (isset($_POST['login'])) {
             background-color: rgba(255, 255, 255, 0);
             width: 100%;
             font-size: 14px;
-            color: #734c10;
+            color: #0000a5;
             font-weight: 400;
             letter-spacing: 1.4px;
             padding: 11px 18px;
-            border: 3px solid #734c10;
+            border: 3px solid #0000a5;
             outline: none;
         }
 
         .form-input::placeholder {
-            color: rgba(115, 76, 16, 0.7);
+            color: #0000a5;
             font-weight: 300;
         }
 
         .form-input:focus {
-            border-color: #b57a3d;
+            border-color:rgb(33, 33, 245);
         }
 
         .password-input-wrapper {
@@ -236,7 +236,7 @@ if (isset($_POST['login'])) {
             background-color: rgba(255, 255, 255, 0);
             width: 100%;
             padding: 9px 15px;
-            border: 3px solid #734c10;
+            border: 3px solid #0000a5;
         }
 
         .password-input-wrapper input {
@@ -244,14 +244,14 @@ if (isset($_POST['login'])) {
             border: none;
             width: 100%;
             font-size: 14px;
-            color: #734c10;
+            color: #0000a5;
             font-weight: 400;
             letter-spacing: 1.4px;
             outline: none;
         }
 
         .password-input-wrapper input::placeholder {
-            color: rgba(115, 76, 16, 0.7);
+            color: #0000a5;
         }
 
         .password-input-wrapper input:focus {
@@ -264,7 +264,7 @@ if (isset($_POST['login'])) {
             object-position: center;
             width: 24px;
             cursor: pointer;
-            fill: #734c10;
+            fill: #0000a5;
             transition: transform 0.3s ease;
         }
 
@@ -275,23 +275,24 @@ if (isset($_POST['login'])) {
         .submit-button {
             align-self: stretch;
             border-radius: 12px;
-            background-color: #734c10;
+            background-color: #0000a5;
             margin-top: 28px;
             gap: 10px;
             overflow: hidden;
             font-size: 15px;
-            color: var(--Foundation-Yellow-Light, #f8f3ed);
+            color:  #c0d1ff;
             font-weight: 400;
             white-space: nowrap;
             padding: 8px 186px;
             border: none;
             cursor: pointer;
+            font-family: 'Sora';
         }
 
         .submit-button:hover {
-            background-color: #ebdac8;
-            color: #734c10;
-            border: 2px solid #734c10;
+            background-color: #c0d1ff;
+            color: #0000a5;
+            border: 2px solid #0000a5;
         }
 
         .visually-hidden {
@@ -366,11 +367,11 @@ if (isset($_POST['login'])) {
 <!-- ======== CONTAINER LOGIN ======== -->
 <div class="login-container">
     <div class="login-wrapper">
-        <img class="background-image" src="/images/assets/background.png" alt="" loading="lazy"/>
+        <img class="background-image" src="/../../assets/images/background-login.jpeg" alt="" loading="lazy"/>
         <div class="content-container">
             <div class="content-grid">
                 <div class="image-column">
-                    <img class="hero-image" src="/images/assets/hero-log-sign.png" alt="login illustration"
+                    <img class="hero-image" src="/../../assets/images/login-register.jpeg" alt="login illustration"
                          loading="lazy"/>
                 </div>
                 <div class="form-column">

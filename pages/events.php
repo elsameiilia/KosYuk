@@ -27,7 +27,6 @@ if (!$stmt) {
     die("Error in count query: " . mysqli_error($dbs));
 }
 if ($search_name) {
-    $search_name = "%$search_name%";
     mysqli_stmt_bind_param($stmt, 's', $search_name);
 } 
 
@@ -93,67 +92,70 @@ mysqli_stmt_close($stmt);
 
     <!-- ======== HERO SECTION ======== -->
     <section class="hero-section-eventlist">
-        <img src="/assets/images/event.png" class="hero-image-eventlist"/>
+        <img src="../../assets/images/hero-posts.jpeg" class="hero-image-eventlist"/>
         <h1 class="hero-title-eventlist">Cari Kos</h1>
     </section>
 
-    <section class="jumbotron">
-        <!-- ======== SEARCH BAR ======== -->
-        <div class="search-container">
-            <form method="GET" action="" id="search-form">
-                <div class="filter-item"><label for="name">Nama Kosan</label> <input type="text" name="search_name"
-                                                                               placeholder="Search by name"
-                                                                               value="<?= htmlspecialchars($search_name); ?>">
-                </div>
-                <button class="search-button" type="submit" form="search-form">Search</button>
-            </form>
-        </div>
-
-        <!-- ======== UPCOMING LIST CONTAINER ======== -->
-        <div class="upcoming-container">
-            <h2 class="upcoming-event-title">Cari Kos yang Kayak Apa?</h2>
-            <div class="eventlist-grid">
-                <!-- row 1 -->
-                <div class="events-gallery">
-                    <?php foreach ($kosan as $kos): ?>
-
-                        <article class="event-card" tabindex="0">
-                            <img loading="lazy" src="/../uploads/photos/<?= $kos["banner"] ?>" class="eventlist-image"
-                                 alt="<?= $kos['title'] ?>"/>
-                            <a href="/pages/events_detail.php?id=<?= $kos['kos_id'] ?>" class="event-details">
-                                <div class="event-info">
-                                    <h2 class="event-title"><?= $kos['title'] ?></h2>
-                                    <h2 class="event-title"><?= $kos['harga'] ?></h2>
-                                </div>
-                            </a>
-                        </article>
-
-                    <?php endforeach; ?>
-                </div>
+    <div class="latar">
+        <div class="eventlist-section">
+            <!-- ======== SEARCH BAR ======== -->
+            <div class="search-container">
+                <form method="GET" action="" id="search-form">
+                    <div class="filter-item"><label for="name">Nama Kosan</label> <input type="text" name="search_name" placeholder="Search by name" value="<?= htmlspecialchars($search_name); ?>">
+                    </div>
+                    <button class="search-button" type="submit" form="search-form">Search</button>
+                </form>
+                
+            </div>
+            <div class="upcoming-container">
+                <h2 class="upcoming-event-title">Cari Kos yang Kayak Apa?</h2><br>
             </div>
         </div>
-    </section>
+        <div class="eventlist-grid">
+            <?php foreach ($kosan as $kos): ?>
+                <article class="event-card" tabindex="0">
+                    <img loading="lazy" src="/../uploads/photos/<?= $kos["banner"] ?>" class="eventlist-image" alt="<?= $kos['title'] ?>"/>
+                    <a href="/pages/events_detail.php?id=<?= $kos['kos_id'] ?>" class="event-details" onclick="return checkLogin(event);">
+                        <div class="event-info">
+                            <h2 class="event-title"><?= $kos['title'] ?></h2>
+                            <h2 class="event-title">Rp.<?= $kos['harga'] ?>/bulan</h2>
+                        </div>
+                    </a>
+                </article>
+            <?php endforeach; ?>
+        </div>
+    
 
     <!-- Pagination links -->
-    <div class="pagination">
-        <?php if ($page > 1): ?>
-            <a
-                    href="?page=<?= $page - 1; ?>&search_name=<?= htmlspecialchars($search_name); ?>&search_date=<?= htmlspecialchars($search_date); ?>">&laquo;
-                Previous</a>
-        <?php endif; ?>
-        <?php for ($i = 1; $i <= $total_pages; $i++): ?>
-            <a href="?page=<?= $i; ?>&search_name=<?= htmlspecialchars($search_name); ?>&search_date=<?= htmlspecialchars($search_date); ?>"
-                <?php if ($i == $page)
-                    echo 'class="active"'; ?>><?= $i; ?></a>
-        <?php endfor; ?>
-        <?php if ($page < $total_pages): ?>
-            <a
-                    href="?page=<?= $page + 1; ?>&search_name=<?= htmlspecialchars($search_name); ?>&search_date=<?= htmlspecialchars($search_date); ?>">Next
-                &raquo;</a>
-        <?php endif; ?>
+        <div class="pagination">
+            <?php if ($page > 1): ?>
+                <a href="?page=<?= $page - 1; ?>&search_name=<?= htmlspecialchars($search_name); ?>&search_date=<?= htmlspecialchars($search_date); ?>">&laquo;
+                    Previous</a>
+            <?php endif; ?>
+            <?php for ($i = 1; $i <= $total_pages; $i++): ?>
+                <a href="?page=<?= $i; ?>&search_name=<?= htmlspecialchars($search_name); ?>&search_date=<?= htmlspecialchars($search_date); ?>"
+                    <?php if ($i == $page)
+                        echo 'class="active"'; ?>><?= $i; ?></a>
+            <?php endfor; ?>
+            <?php if ($page < $total_pages): ?>
+                <a
+                        href="?page=<?= $page + 1; ?>&search_name=<?= htmlspecialchars($search_name); ?>&search_date=<?= htmlspecialchars($search_date); ?>">Next
+                    &raquo;</a>
+            <?php endif; ?>
+        </div>
     </div>
-    </main>
+</main>
 
+<script> 
+    function checkLogin(post) { 
+        <?php if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true): ?> 
+        post.preventDefault(); // Mencegah link diakses 
+        alert('Anda harus login untuk mengakses detail post.'); 
+        window.location.href = '../pages/login.php'; 
+        return false; 
+        <?php endif; ?> 
+        return true; } 
+</script>
     <!-- =========== FOOTER =========== -->
     <?php include_once (__DIR__ . "/../includes/footer.php"); ?>
 

@@ -16,7 +16,7 @@
    ==========================================================*/
 
 .landing-container {
-  background: #fff8f0;
+  background: #d3dfff;
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -30,7 +30,7 @@
 /*====== HEADER ======*/
 .site-header {
   align-items: center;
-  background: #f5ede5;
+  background: #d8e2ff;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   display: flex;
   width: 100%;
@@ -45,7 +45,7 @@
 .brand-name {
   flex-grow: 1;
   font-family: 'Underdog', sans-serif;
-  background: linear-gradient(#ff9900, #734c10);
+  background: linear-gradient(#c0d1ff, #0000a5);
   -webkit-background-clip: text;
   color: transparent;
 }
@@ -71,12 +71,12 @@
 }
 
 .nav-link:hover {
-  color: #734c10;
+  color: #0000a5;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .nav-link.active {
-  font-weight: 700;
+  font-weight: 900;
   color: black;
   border-bottom: 10px solid #734C10;
 }
@@ -99,20 +99,20 @@
 .login-btn {
   width: 85px;
   border-radius: 24px;
-  background: #f5ede5;
+  background: #fff;
   padding: 10px;
   padding-left: 3px;
   padding-right: 3px;
-  color: #bd874f;
+  color: #0000a5;
   text-decoration: solid;
-  border: 1px solid #bd874f;
+  border: 1px solid #0000a5;
 }
 
 
 .login-btn:hover {
-  background: #ebdac8;
-  color: #bd874f;
-  border: 1px solid #bd874f;
+  background: #c0d1ff;
+  color: #0000a5;
+  border: 1px solid #c0d1ff;
   transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease;
 }
 
@@ -122,7 +122,7 @@
 .sign-btn {
   width: 100px;
   border-radius: 24px;
-  background: #bd874f;
+  background: #0000a5;
   padding: 10px;
   color: white;
   text-decoration: none;
@@ -131,8 +131,8 @@
 
 .sign-btn:hover {
   background: transparent;
-  color: #bd874f;
-  border: 1px solid #bd874f;
+  color: #0000a5;
+  border: 1px solid #0000a5;
   transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease;
 }
 
@@ -145,14 +145,16 @@
 
 .user-profile {
   display: flex;
+  width: fit-content;
   align-items: center;
   color: #f8f3ed;
   text-align: center;
   flex-grow: 1;
+  gap: 10px;
 }
 
 .profile-wrapper {
-  background: #bd874f;
+  background: #0000a5;
   border-radius: 12px;
   display: flex;
   flex-direction: row;
@@ -171,7 +173,7 @@
 }
 
 .profile-name {
-  color: #f8f3ed;
+  color: #c0d1ff;
   text-align: center;
   font: 600 16px 'Sora', sans-serif;
   line-height: 1;
@@ -240,10 +242,11 @@
 
 .hero {
   height: 100vh;
-  background-image: linear-gradient(rgb(2, 59, 247), rgba(0, 0, 0, 0)), url('../images/herocek.jpeg');
+  background-image: linear-gradient(rgb(2, 59, 247), rgba(0, 0, 0, 0)), url('/../assets/images/hero-index.jpeg');
   background-size: cover;
   background-position: center;
   position: relative;
+  font-family: 'Sora';
 }
 
 .hero-content {
@@ -304,6 +307,7 @@
   padding: 5rem 5%;
   position: relative;
   z-index: 2;
+  font-family: 'Sora';
 }
 
 .about-img {
@@ -338,30 +342,6 @@
   color: #000000;
   padding-bottom: 30px;
 }
-
-
-/* ====== DISCOVER EGYPT ======*/
-/* .hero-subtitle {
-  font-weight: 500;
-  font-size: 20px;
-} */
-
-/*====== experience unforgatable ======*/
-/* .hero-title {
-  font-size: 48px;
-  margin: 37px 0;
-} */
-
-
-/*====== BUTTON explore more ====== */
-
-
-/* .main-content {
-  margin: 124px auto 0;
-  width: 100%;
-  max-width: 1300px;
-} */
-
 
 
 /*====== DESTINASI ======*/
@@ -410,17 +390,31 @@
 
 
 /*====== EVENT ======*/
-.events-section {
+.latar{
+background: #d3dfff;
+  display: flex;
+  gap: 3rem;
+  flex-direction: column;
+  align-items: center;
   border-radius: 40px;
+  margin: -40px 0 0 0;
+  padding: 5rem 5%;
+  position: relative;
+  z-index: 2;
+  font-family: 'Sora';
+}
+
+.events-section {
   display: flex;
   gap: 40px 59px;
   flex-wrap: wrap;
-  background: #b4c8ff;
+  background: #c0d1ff;
   display: flex;
   gap: 3rem;
   align-items: center;
   padding: 5rem 5%;
-  margin-bottom: 50px;
+  padding-bottom: 7rem;
+  margin-bottom: 0px;
   position: relative;
   z-index: 2;
 }
@@ -486,7 +480,7 @@
 .event-image-home {
   position: absolute;
   inset: 0;
-  height: 100%;
+  height: 95%;
   width: 100%;
   border-top-left-radius: 24px;
   border-top-right-radius: 24px;
@@ -501,11 +495,10 @@
   z-index: 10;
   display: flex;
   margin-bottom: 0;
-  height: 100px;
   width: 100%;
   flex-direction: column;
   align-items: start;
-  padding: 16px 20px 16px 20px;
+  padding: 8px 20px 20px;
   text-decoration: none;
 
 }
@@ -514,8 +507,7 @@
   display: flex;
   flex-direction: column;
   justify-content: start;
-  line-height: normal;
-  font-family: Sora;
+  font-family: 'Sora';
 }
 
 .event-title-home {
@@ -644,7 +636,7 @@
 
 /*====== FOOTER ======*/
 .site-footer {
-  background: #976c3f;
+  background: #0000a5;
   min-height: 100px;
   position: relative;
   padding-top: 70px;
@@ -660,7 +652,7 @@
   flex-grow: 1;
   font-family: 'Underdog', sans-serif;
   font-weight: 500;
-  background: linear-gradient(#ea7900, #ffad33);
+  background: linear-gradient(#c0d1ff, #ffffff);
   -webkit-background-clip: text;
   color: transparent;
 }
@@ -1124,21 +1116,6 @@
 
 
 /* ======== event section ======== */
-.eventlist-section {
-  border-radius: 54px;
-  background: #f5f5f5;
-  z-index: 10;
-  display: flex;
-  margin-top: -95px;
-  width: 100%;
-  flex-direction: column;
-  align-items: left;
-  font-family: 'Poppins', sans-serif;
-  color: black;
-  justify-content: left;
-  padding: 100px 70px;
-}
-
 
 
 /* ======== search bar ======== */
@@ -1156,7 +1133,7 @@
 .search-container {
   display: flex;
   justify-content: center;
-  background-color: #976C3F;
+  background-color: #0000a5;
   padding: 10px 40px;
   margin-top: 2rem;
   border-radius: 24px;
@@ -1206,7 +1183,7 @@
 .search-button {
   background-color: #F8F3ED;
   border: none;
-  color: #976C3F;
+  color: #0000a5;
   font-weight: 600;
   font-size: 14px;
   padding: 8px 20px;
@@ -1217,8 +1194,8 @@
 }
 
 .search-button:hover {
-  background-color: #ebdac8;
-  color: #734c10;
+  background-color: #c0d1ff;
+  color: #0000a5;
 }
 
 /* ======== upcoming event title ======== */
@@ -1237,24 +1214,51 @@
 
 /* ======== daftar event ======== */
 .eventlist-grid {
-  display: flex;
-  width: 100%;
-  flex-direction: column;
-  font-size: 16px;
-  color: #000;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Membuat 4 kolom dengan lebar yang sama */
+  gap: 20px; /* Jarak antar item */
+  justify-content: center; /* Menempatkan grid di tengah */
+  padding: 20px; /* Jarak dalam kontainer grid */
 }
 
-.eventlist-row {
+.event-card {
   display: flex;
-  width: 100%;
-  align-items: center;
-  gap: 35px;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-bottom: 60px;
-  margin-top: 30px;
+  flex-direction: column;
+  box-sizing: border-box;
+  overflow: hidden;
+  background-color: #fff;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  
+  
 }
+
+.eventlist-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.pagination {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.pagination a {
+  margin: 0 5px;
+  padding: 8px 16px;
+  text-decoration: none;
+  color: #000;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.pagination a.active {
+  background-color: #ddd;
+}
+
 
 
 /* ======== event card ======== */
@@ -1264,29 +1268,33 @@
   border-radius: 24px;
   position: relative;
   aspect-ratio: 0.774;
-  width: 20%;
-  padding-top: 254px;
+  width: 100%;
+  padding-top: 0px;
   box-shadow: 0px 4px 12px rgba(67, 66, 66, 0.4);
+  overflow: hidden;
+  height: auto;
+  padding: 0;
 }
 
 .eventlist-image {
-  position: absolute;
+  position: relative;
   inset: 0;
-  height: 100%;
+  height: 75%;
   width: 100%;
-  border-radius: 24px;
+  border-radius: 24px 24px 0 0;
   object-fit: cover;
   object-position: center;
+  flex-shrink: 0;
 }
 
 .event-details {
-  position: absolute;
+  position: relative;
   border-radius: 0 0 24px 24px;
-  background: var(--Foundation-Yellow-Normal, #c69552);
+  background: var(--Foundation-Yellow-Normal, #471eff);
   z-index: 10;
   display: flex;
   margin-bottom: 0;
-  height: 100px;
+  height: 25%;
   width: 100%;
   flex-direction: column;
   align-items: start;
@@ -1299,6 +1307,7 @@
   flex-direction: column;
   justify-content: start;
   font-family: Sora;
+  margin-top: auto;
 }
 
 .event-title {
@@ -1405,7 +1414,7 @@
 }
 
 .breadcrumb-eventeach {
-  background: var(--Foundation-Yellow-Normal, #bd874f);
+  background: var(--Foundation-Yellow-Normal, #0000a5);
   color: var(--Foundation-Yellow-Light, #f8f3ed);
   padding: 9px 70px;
   font: 600 20px Sora, sans-serif;
@@ -1431,9 +1440,9 @@
 /* ======== tentang event ======== */
 .eventeach-content {
   max-width: 1295px;
-  margin: 41px auto;
+  margin: 20px 50px;
   font-family: Sora, sans-serif;
-  padding: 10px 70px 60px;
+  padding: 10px 20px 60px;
 }
 
 .eventeach-title {
@@ -1471,14 +1480,14 @@
 }
 
 .info-label-eventeach {
-  background: var(--Foundation-Yellow-Normal, #bd874f);
-  color: var(--Foundation-Yellow-Light, #f8f3ed);
+  background: var(--Foundation-Yellow-Normal, #0000a5);
+  color: var(--Foundation-Yellow-Light, #d8e2fc);
   padding: 17px 33px;
   font: 400 20px Sora, sans-serif;
 }
 
 .info-value-eventeach {
-  background: var(--Foundation-Yellow-Light, #f8f3ed);
+  background: var(--Foundation-Yellow-Light, #c0d1ff);
   padding: 17px 33px;
   font: 400 20px Sora, sans-serif;
 }
@@ -1531,9 +1540,6 @@
 }
 
 
-
-
-
 /* ================================================================
    ABOUT STYLING
    ================================================================ */
@@ -1555,6 +1561,18 @@
   color: var(--Foundation-Yellow-Light, #f8f3ed);
   font-weight: 600;
   padding: 40px 70px 306px;
+  z-index: 2;
+}
+
+.hero-section-about::before { 
+  content: ''; 
+  position: absolute; 
+  top: 0; 
+  left: 0; 
+  width: 100%; 
+  height: 100%; 
+  background-color: rgba(0, 0, 0, 0.1); 
+  z-index: 1; 
 }
 
 .hero-image-about {
@@ -1563,6 +1581,7 @@
   height: 100%;
   width: 100%;
   object-fit: cover;
+  z-index: 0;
 }
 
 .hero-title-about {
@@ -1582,7 +1601,7 @@
 /* ======== contact OasisSeek ======== */
 .contact-section-about {
   border-radius: 54px;
-  background: var(--Foundation-Yellow-Normal, #bd874f);
+  background: var(--Foundation-Yellow-Normal, #2b00e8);
   z-index: 10;
   display: flex;
   margin-top: -95px;
@@ -1590,18 +1609,18 @@
   flex-direction: column;
   align-items: center;
   font-family: 'Poppins', sans-serif;
-  color: var(--Foundation-Yellow-Light, #f8f3ed);
+  color: var(--Foundation-Yellow-Light, #fff);
   justify-content: center;
-  padding: 70px 70px;
+  padding: 50px;
 }
 
 .contact-container-about {
   display: flex;
-  margin-bottom: -27px;
+  margin: 20px;
   align-items: center;
   gap: 40px 126px;
   justify-content: start;
-  flex-wrap: wrap;
+  flex-direction: row;
 }
 
 .contact-info-about {
@@ -1610,7 +1629,7 @@
   min-width: 240px;
   flex-direction: column;
   justify-content: start;
-  width: 493px;
+  width: 500px;
   margin: auto 0;
 }
 
@@ -1703,6 +1722,67 @@
   object-fit: contain;
 }
 
+.feedback{
+  display: flex;
+  flex-direction: column;
+  background-color: #c0d1ff;
+  width: 100%;
+  height: 500px;
+  border-radius: 24px;
+  padding: 15px;
+  color: #0000a5;
+}
+
+.fb-title{
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.feedback-container{
+  margin:25px 20px 20px 20px;
+  gap: 20px;
+}
+
+.feedback-form label {
+  font-weight: 200;
+  font-size: 16px;
+  font-family: 'Sora';
+}
+
+.feedback-form input{
+  border-radius: 5px; 
+  background-color: rgba(249, 250, 251, 1);
+  color: rgba(0, 0, 0, 0.5);
+  letter-spacing: 0.3px;
+  padding: 9px 18px;
+  font: 400 12px/2 'Poppins', sans-serif;
+  border: 2px solid rgba(115, 76, 16, 1);
+  width: 100%;
+  height: 30px;
+}
+
+.feedback-form #submit{
+  width: 100%;
+  height: 45px;
+  background-color: #0000a5;
+  color: white;
+  font-weight: 500;
+  font-family: 'Sora';
+  align-items: center;
+}
+
+.feedback-form #pesan{
+  min-height: 100px;
+  padding: 9px 18px;
+}
+
+.feedback-form{
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+  justify-content: start;
+  height: 100%;
+}
 
 @media (max-width: 991px) {
   .contact-card {
@@ -1867,7 +1947,7 @@
    ==========================================================*/
 .container-dashboard {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   height: 100vh;
 }
 
@@ -1880,12 +1960,13 @@
 
 .logo-dashboard {
   font-family: 'Underdog', sans-serif;
-  background: linear-gradient(#ff9900, #734c10);
+  background: linear-gradient(#c0d1ff, #0000a5);
   -webkit-background-clip: text;
   color: transparent;
   font-size: 30px;
   margin-bottom: 30px;
   font-weight: 600;
+  text-decoration: none;
 }
 
 .menu {
@@ -1929,7 +2010,7 @@
 .main-dashboard {
   flex-grow: 1;
   padding: 15px;
-  width: 1080px;
+  width: 100%;
 }
 
 
@@ -1952,6 +2033,7 @@
   font-family: Sora;
   color: #000;
   margin: 20px;
+  margin-bottom: 10px;
 }
 
 
@@ -1968,7 +2050,7 @@
   background: #ebdac8;
   padding: 10px 5px;
   font-size: 20px;
-  gap: 3px;
+  gap: 20px;
 }
 
 .profile-icon-dashboard {
@@ -1995,19 +2077,18 @@
   }
 }
 
-div.gallery {
-  border: 1px solid #ccc;
-}
-
-div.gallery:hover {
-  border: 1px solid #777;
+.gallery{
+  display: flex;
+  justify-content: space-evenly;
+  gap: 20px;
 }
 
 div.gallery img {
-  height: 300px;
+  height: 500px;
   width: 300px;
   object-fit: cover;
   object-position: center;
+  border-radius: 10px;
 }
 
 div.desc {

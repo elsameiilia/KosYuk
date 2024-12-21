@@ -120,7 +120,7 @@ mysqli_stmt_close($stmt_check);
     <section class="hero-section-eventeach">
         <img src="/../uploads/photos/<?= htmlspecialchars($kos['banner']); ?>"
              alt="Scenic view of <?= htmlspecialchars($kos['title']); ?>" class="hero-image-eventeach"/>
-</div>
+
 </section>
 <nav class="breadcrumb-eventeach" aria-label="Breadcrumb">
     <div class="breadcrumb-list-eventeach">
@@ -131,17 +131,17 @@ mysqli_stmt_close($stmt_check);
 </nav>
 
 <!-- ======== EVENT KONTEN ======== -->
-<main class="eventeach-content">
+<div class="eventeach-content">
     <div class="hero-content-placeseach">
                 <h1 class="hero-title-placeseach"><?= htmlspecialchars($kos['title']); ?></h1>
 
                 <!-- ====== share & bookmarks ===== -->
                 <div class="social-icons-placeseach">
-                    <a target="_blank" href="<?= htmlspecialchars($kos['url_wa']); ?>"><img src="/assets/images/whatsapp.png" alt="Social media link" class="social-icon" /></a>
+                    <a target="_blank" href="<?= htmlspecialchars($kos['url_wa']); ?>"><img src="/assets/images/whatsapp-icon.png" alt="Social media link" class="social-icon" /></a>
                     <form method="POST" action="">
                         <input type="hidden" name="bookmark_action" value="<?= $is_bookmarked ? 'remove' : 'add'; ?>">
                         <button type="submit" style="border:0;">
-                            <img src="/assets/images/bookmark-dashboard.png"
+                            <img src="/assets/images/bookmark-new.png"
                                  alt="<?= $is_bookmarked ? 'Remove from favorites' : 'Save to favorites'; ?>"
                                  class="bookmark-icon-eventeach"/>
                         </button>
@@ -153,7 +153,8 @@ mysqli_stmt_close($stmt_check);
             <?= nl2br(htmlspecialchars($kos['description'])); ?>
         </p>
     </article>
-
+    
+    
     <!-- ======== EVENT INFO ======== -->
     <section class="eventeach-details">
         <div class="info-section-eventeach">
@@ -164,7 +165,7 @@ mysqli_stmt_close($stmt_check);
                 <div class="info-label-eventeach">Fasilitas</div>
                 <div class="info-value-eventeach"><?= htmlspecialchars($kos['fasilitas']); ?></div>
                 <div class="info-label-eventeach">Harga</div>
-                <div class="info-value-eventeach"><?= htmlspecialchars($kos['harga']); ?></div>
+                <div class="info-value-eventeach">Rp.<?= htmlspecialchars($kos['harga']); ?> /bulan</div>
             </div>
         </div>
     </section>
@@ -181,11 +182,12 @@ mysqli_stmt_close($stmt_check);
             </div>
         </div>
     </section>
+</div>
 
-</main>
 
 <!-- =========== FOOTER =========== -->
 <?php include_once __DIR__ . "/../includes/footer.php"; ?>
+</div>
 
 </body>
 </html>
