@@ -19,7 +19,7 @@ CREATE TABLE kosan(
     description TEXT            NULL,
     lokasi		VARCHAR(255)	NULL,
     fasilitas	TEXT			NULL,
-    harga		DECIMAL(10, 2)	NULL,
+    harga		VARCHAR(100)	NULL,
     banner      VARCHAR(255)    NOT NULL,
     url_wa      VARCHAR(255)    NULL
 );
