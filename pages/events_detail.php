@@ -137,7 +137,7 @@ mysqli_stmt_close($stmt_check);
 
                 <!-- ====== share & bookmarks ===== -->
                 <div class="social-icons-placeseach">
-                    <a target="_blank" href="<?= htmlspecialchars($kos['url_wa']); ?>"><img src="/assets/images/whatsapp-icon.png" alt="Social media link" class="social-icon" /></a>
+                    <a target="_blank" href="https://wa.me/<?= htmlspecialchars($kos['url_wa']); ?>"><img src="/assets/images/whatsapp-icon.png" alt="Social media link" class="social-icon" /></a>
                     <form method="POST" action="">
                         <input type="hidden" name="bookmark_action" value="<?= $is_bookmarked ? 'remove' : 'add'; ?>">
                         <button type="submit" style="border:0;">
